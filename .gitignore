@@ -1,7 +1,10 @@
 *.log
 .DS_Store
 .tmp
+*.xml
+*.iml
 dist/*
 bower_components
 node_modules
 test/unit/build/*
+.idea/
