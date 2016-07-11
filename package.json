@@ -1,15 +1,23 @@
 {
   "name": "rets-rabbit-js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Javascript SDK for the Rets Rabbit API",
-  "main": "index.js",
+  "main": "dist/rets_rabbit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/index.js",
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:umd": "webpack --output-filename rets_rabbit.umd.js",
+    "build:umd.min": "webpack --output-filename rets_rabbit.umd.min.js -p"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anecka/Rets-Rabbit-Javascript-SDK.git"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "reso",
     "rets",
@@ -25,8 +33,16 @@
   },
   "homepage": "https://github.com/Anecka/Rets-Rabbit-Javascript-SDK#readme",
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "gulp": "^3.9.1",
-    "gulp-connect": "^4.1.0"
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "npm-run-all": "^2.3.0",
+    "rimraf": "^2.5.3",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "component-emitter": "^1.2.1",
+    "domready": "^1.0.8",
+    "superagent": "^2.0.0"
   }
 }
