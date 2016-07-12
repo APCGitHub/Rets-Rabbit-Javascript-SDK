@@ -11,7 +11,7 @@ $ npm install rets-rabbit-js
 ```
 
 ## Configure a new client
-There are several configuration options which you can use with instantiating
+There are several configuration options which you can use when instantiating
  a new Rets Rabbit client.
  
  ```javascript
@@ -40,3 +40,13 @@ rrClient.host('YOUR_NEW_HOST'); //update host
 
 rrClient.url('YOUR_NEW_URL'); //update url
  ```
+
+## Authentication
+The RR library exposes a method `auth()` which hits the OAUTH 2.0 endpoint
+to receive a new access token.
+
+```javascript
+var rrClient = new RetsRabbit({});
+
+rrClient.auth()
+```
