@@ -15,12 +15,12 @@ There are several configuration options which you can use with instantiating
  a new Rets Rabbit client.
  
  ```javascript
-    var rrClient = new RetsRabbit({
-        clientId: 'YOUR_CLIENT_ID',
-        clientSecret: 'YOUR_CLIENT_SECRET',
-        host: 'https',
-        url: 'stage.retsrabbit.com/api'
-    });
+var rrClient = new RetsRabbit({
+    clientId: 'YOUR_CLIENT_ID',
+    clientSecret: 'YOUR_CLIENT_SECRET',
+    host: 'https',
+    url: 'stage.retsrabbit.com/api'
+});
  ```
  
  If you do not supply your own clientId or clientSecret, the test Rets Rabbit
@@ -30,13 +30,13 @@ There are several configuration options which you can use with instantiating
  the following methods:
  
  ```javascript
-    var rrClient = new RetsRabbit({});
-    
-    rrClient.clientId('YOUR_NEW_CLIENT_ID'); //update clientId
-    
-    rrClient.clientSecret('YOUR_NEW_CLIENT_SECRET'); //update clientSecret
-    
-    rrClient.host('YOUR_NEW_HOST'); //update host
-    
-    rrClient.url('YOUR_NEW_URL'); //update url
+var rrClient = new RetsRabbit({});
+
+rrClient.clientId('YOUR_NEW_CLIENT_ID'); //update clientId
+
+rrClient.clientSecret('YOUR_NEW_CLIENT_SECRET'); //update clientSecret
+
+rrClient.host('YOUR_NEW_HOST'); //update host
+
+rrClient.url('YOUR_NEW_URL'); //update url
  ```
