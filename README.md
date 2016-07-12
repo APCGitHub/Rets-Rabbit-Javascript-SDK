@@ -48,5 +48,16 @@ to receive a new access token.
 ```javascript
 var rrClient = new RetsRabbit({});
 
-rrClient.auth()
+rrClient.auth(function (err, res){
+    if(err){
+        //handle error
+    } else {
+        //grab token
+        var token = res.access_token;
+    }
+});
 ```
+
+## Querying
+The latest version (v2) of RR is ODATA v4 compliant which means we offer
+ support for
