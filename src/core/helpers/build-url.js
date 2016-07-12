@@ -1,7 +1,6 @@
 /**
  * Created by aclinton on 7/11/16.
  */
-var RetsRabbit = require('../../core');
 
 module.exports = function (host, domain, target) {
     var url = host + "://";
