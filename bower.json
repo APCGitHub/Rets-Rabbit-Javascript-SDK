@@ -20,10 +20,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ],
-  "files": [
-    "dist",
-    "README.md"
+    "tests",
+    "package.json",
+    "src"
   ]
 }
