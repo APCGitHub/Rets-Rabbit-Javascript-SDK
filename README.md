@@ -56,7 +56,7 @@ RetsRabbit.ready(function () {
 
 ## Authentication
 The RR library exposes a method `auth()` which hits the OAUTH 2.0 endpoint
-to receive a new access token. By deafult this method stores the access_token
+to receive a new access token. By default this method stores the access_token
 in a localStorage key called 'access_token', but this can be configured.
 
 ```javascript
@@ -90,7 +90,8 @@ The latest version (v2) of RR is ODATA v4 compliant which means we offer
  $top=10
  ```
  
- See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details on how to interact with our data.
+ See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details 
+ on how to interact with our data.
 
 ###Get Request
 In order to perform queries against with the RR API, this module exposes
