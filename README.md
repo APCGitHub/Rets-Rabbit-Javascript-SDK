@@ -19,7 +19,8 @@ var rrClient = new RetsRabbit({
     clientId: 'YOUR_CLIENT_ID',
     clientSecret: 'YOUR_CLIENT_SECRET',
     host: 'https',
-    url: 'stage.retsrabbit.com/api'
+    url: 'stage.retsrabbit.com/api',
+    storageKey: 'token' //default is 'access_token'
 });
  ```
  
@@ -39,11 +40,13 @@ rrClient.clientSecret('YOUR_NEW_CLIENT_SECRET'); //update clientSecret
 rrClient.host('YOUR_NEW_HOST'); //update host
 
 rrClient.url('YOUR_NEW_URL'); //update url
+
+rrClient.storageKey('NEW_KEY_NAME'); //update localStorage token key name
  ```
  
 ## Loading
 Make sure you wrap any of your logic inside of a `.ready()` callback to
-make sure the library is fully loaded.
+ensure the library is fully loaded.
 
 ```javascript
 RetsRabbit.ready(function () {
@@ -53,7 +56,8 @@ RetsRabbit.ready(function () {
 
 ## Authentication
 The RR library exposes a method `auth()` which hits the OAUTH 2.0 endpoint
-to receive a new access token.
+to receive a new access token. By deafult this method stores the access_token
+in a localStorage key called 'access_token', but this can be configured.
 
 ```javascript
 var rrClient = new RetsRabbit({});
@@ -72,7 +76,7 @@ RetsRabbit.ready(function () {
 
 ## Querying
 The latest version (v2) of RR is ODATA v4 compliant which means we offer
- support for query expressions
+ support for query expressions similar to these
  
  ```bash
  $filter=ListPrice gt 75000 and geo.distance(location, POINT(-127.89734578345 45.234534534)) lt 50
