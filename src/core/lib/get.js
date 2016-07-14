@@ -3,23 +3,22 @@
  */
 var request = require('superagent'),
     handleResponse = require('../helpers/superagent-handle-response'),
-    urlBuilder = require('../helpers/build-url');
+    urlBuilder = require('../helpers/build-url'),
+    Storage = require('../utils/token-storage'),
+    RetsRabbit = require('../');
 
 module.exports = function (url, params, token, callback) {
     var this_token, data, _url, r;
 
-    if(arguments.length < 3){
-        this.log("Not enough arguments supplied");
+    if(arguments.length < 4){
+        RetsRabbit.log("Not enough arguments supplied to the method get()");
         return;
-    } else if(arguments.length == 3){
-        this_token = this.getToken(this.config.storageKey);
     } else {
-        if(token == null || typeof token !== 'string'){
-            this.log("You supplied an invalid token");
-            return;
+        if(token == null || typeof token !== 'string') {
+            this_token = Storage.getToken(this.config.storageKey);
+        } else {
+            this_token = token;
         }
-
-        this_token = token;
     }
 
     data = params || {};
