@@ -56,6 +56,12 @@ RetsRabbit.prototype.url = function(str){
     return this;
 };
 
+RetsRabbit.prototype.storageKey = function(str){
+    if (!arguments.length) return this.config.storageKey;
+    this.config.storageKey = (str ? String(str) : null);
+    return this;
+};
+
 RetsRabbit.log = function (message) {
     if(RetsRabbit.debug && window.console){
         console.log('[Rets Rabbit] ' + message);
