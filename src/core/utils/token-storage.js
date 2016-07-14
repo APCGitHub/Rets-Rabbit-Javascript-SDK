@@ -10,7 +10,7 @@ if (typeof (Storage) !== void(0)) {
 
 module.exports = {
     'getToken': function (key) {
-        if(localStorage != null) {
+        if(localStorage == null) {
             RetsRabbit.log("Local Storage is not supported by your browser");
             return;
         }
@@ -21,7 +21,6 @@ module.exports = {
         return localStorage.getItem(key);
     },
     'setToken': function (key, token) {
-        console.log('setting the token');
         if(localStorage == null) {
             RetsRabbit.log("Local Storage is not supported by your browser");
             return;
