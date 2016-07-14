@@ -1,0 +1,29 @@
+{
+  "name": "rets-rabbit-js",
+  "description": "Javascript SDK for the Rets Rabbit API",
+  "main": "dist/rets_rabbit.js",
+  "authors": [
+    "Andrew Clinton <aclinton@anecka.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "reso",
+    "rets",
+    "rabbit",
+    "data",
+    "dictionary",
+    "realstate"
+  ],
+  "homepage": "https://github.com/Anecka/Rets-Rabbit-Javascript-SDK",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
