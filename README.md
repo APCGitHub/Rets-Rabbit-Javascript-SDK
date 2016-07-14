@@ -37,11 +37,12 @@ rrClient.clientId('YOUR_NEW_CLIENT_ID'); //update clientId
 
 rrClient.clientSecret('YOUR_NEW_CLIENT_SECRET'); //update clientSecret
 
-rrClient.host('YOUR_NEW_HOST'); //update host
+rrClient.host('YOUR_NEW_HOST'); //update host (http|https) default: http
 
-rrClient.url('YOUR_NEW_URL'); //update url
+rrClient.url('YOUR_NEW_URL'); //update url, default: stage.retsrabbit.com
 
 rrClient.storageKey('NEW_KEY_NAME'); //update localStorage token key name
+                                     //default: 'access_token'
  ```
  
 ## Loading
