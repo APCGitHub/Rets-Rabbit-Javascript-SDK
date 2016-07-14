@@ -60,7 +60,7 @@ rrClient.auth(function (err, res){
 
 ## Querying
 The latest version (v2) of RR is ODATA v4 compliant which means we offer
- support for query expression such as
+ support for query expressions
  
  ```bash
  $filter=ListPrice gt 75000 and geo.distance(location, POINT(-127.89734578345 45.234534534)) lt 50
