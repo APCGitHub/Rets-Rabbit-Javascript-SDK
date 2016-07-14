@@ -40,6 +40,16 @@ rrClient.host('YOUR_NEW_HOST'); //update host
 
 rrClient.url('YOUR_NEW_URL'); //update url
  ```
+ 
+## Loading
+Make sure you wrap any of your logic inside of a `.ready()` callback to
+make sure the library is fully loaded.
+
+```javascript
+RetsRabbit.ready(function () {
+    //authenticate or perform request
+});
+```
 
 ## Authentication
 The RR library exposes a method `auth()` which hits the OAUTH 2.0 endpoint
@@ -48,13 +58,15 @@ to receive a new access token.
 ```javascript
 var rrClient = new RetsRabbit({});
 
-rrClient.auth(function (err, res){
-    if(err){
-        //handle error
-    } else {
-        //grab token
-        var token = res.access_token;
-    }
+RetsRabbit.ready(function () {
+    rrClient.auth(function (err, res){
+        if(err){
+            //handle error
+        } else {
+            //grab token
+            var token = res.access_token;
+        }
+    });
 });
 ```
 
@@ -75,3 +87,29 @@ The latest version (v2) of RR is ODATA v4 compliant which means we offer
  ```
  
  See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details on how to interact with our data.
+
+###Get Request
+In order to perform queries against with the RR API, this module offers
+a get request method which accepts a request parameter.
+
+```javascript
+   var rrClient = new RetsRabbit();
+   
+   RetsRabbit.ready(function () {
+        var q = {
+            '$top': 10, 
+            '$select': 'ListingId, ListPrice'
+        };
+        
+        //third param is for the access_token if you want directly
+        //pass it in, but it pulls from localStorage by default
+        rrClient.get('/v2/property', q, null, function (err, res){
+            if(err){
+                //handle error
+            } else {
+               var listings = res.value;
+               //do awesome stuff with listings
+            }
+        });
+   });
+```
