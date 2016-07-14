@@ -93,8 +93,8 @@ The latest version (v2) of RR is ODATA v4 compliant which means we offer
  See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details on how to interact with our data.
 
 ###Get Request
-In order to perform queries against with the RR API, this module offers
-a get request method which accepts a request parameter.
+In order to perform queries against with the RR API, this module exposes
+a `get()` request method which accepts a request parameter.
 
 ```javascript
    var rrClient = new RetsRabbit();
