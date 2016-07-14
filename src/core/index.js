@@ -1,13 +1,13 @@
 /**
  * Created by aclinton on 7/11/16.
  */
-var Emitter = require('component-emitter');
+var Emitter = require('component-emitter')
 
 function RetsRabbit(config){
     this.configure(config);
 }
 
-RetsRabbit.debug = false;
+RetsRabbit.debug = true;
 RetsRabbit.loaded = true;
 
 //Set up emitter
@@ -21,7 +21,8 @@ RetsRabbit.prototype.configure = function (cfg) {
         clientId: config.client_id || 'retsrabbit',
         clientSecret: config.client_secret || 'retsrabbit',
         host: config.host || 'https',
-        url: config.url || 'stage.retsrabbit.com/api'
+        url: config.url || 'stage.retsrabbit.com/api',
+        storageKey: config.token_key || 'access_token'
     };
 
     if (RetsRabbit.debug) {

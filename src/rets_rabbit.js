@@ -4,7 +4,8 @@ var RetsRabbit = require('./core'),
 extend(RetsRabbit.prototype, {
     "post": require('./core/lib/post'),
     "get": require('./core/lib/get'),
-    "auth": require('./core/auth')
+    "auth": require('./core/lib/auth'),
+    "storage": require('./core/utils/token-storage')
 });
 
 RetsRabbit.utils = {

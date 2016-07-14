@@ -6,12 +6,27 @@ var request = require('superagent'),
     urlBuilder = require('../helpers/build-url');
 
 module.exports = function (url, params, token, callback) {
-    var data = params || {};
-    var url = urlBuilder(this.config.host, this.config.url, url);
-    var r = request.get(url);
-    
-    if(token)
-        r.set('Authorization', 'Bearer ' + token);
+    var this_token, data, _url, r;
+
+    if(arguments.length < 3){
+        this.log("Not enough arguments supplied");
+        return;
+    } else if(arguments.length == 3){
+        this_token = this.getToken(this.config.storageKey);
+    } else {
+        if(token == null || typeof token !== 'string'){
+            this.log("You supplied an invalid token");
+            return;
+        }
+
+        this_token = token;
+    }
+
+    data = params || {};
+    _url = urlBuilder(this.config.host, this.config.url, url);
+    r = request.get(_url);
+
+    r.set('Authorization', 'Bearer ' + this_token);
     
     if(JSON.stringify(data) !== '{}')
         r.query(data);
