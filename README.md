@@ -87,7 +87,7 @@ rrClient.get('/v1/rest-of-path', ...) //v1 query string
 ```
 
 To learn more about querying the v1 endpoint go check out our [v1 docs]
-(https://retsrabbit.com/docs/v1) .
+(https://retsrabbit.com/docs) .
 
 #### V2
 
