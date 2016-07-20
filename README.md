@@ -76,6 +76,25 @@ RetsRabbit.ready(function () {
 ```
 
 ## Querying
+There are currently two version of the RR API: v1 & v2. This package supports
+querying against both endpoints, by simply changing the url your GET
+request is pointed at.
+
+#### V1
+
+```javascript
+rrClient.get('/v1/rest-of-path', ...) //v1 query string
+```
+
+To learn more about querying the v1 endpoint go check out our [v1 docs]
+(https://retsrabbit.com/docs/v1)
+
+#### V2
+
+```javascript
+rrClient.get('/v2/rest-of-path', ...) //v2 query string
+```
+
 The latest version (v2) of RR is ODATA v4 compliant which means we offer
  support for query expressions similar to these
  
@@ -92,7 +111,10 @@ The latest version (v2) of RR is ODATA v4 compliant which means we offer
  ```
  
  See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details 
- on how to interact with our data.
+ on how to interact with our data. If reading through documentation isn't
+ your kind of thing we have an [API explorer](https://explore.retsrabbit.com) 
+ which allows you to interactively play with v2 of the API in an intuitive 
+ and fun way!
 
 ###Get Request
 In order to perform queries against with the RR API, this module exposes
