@@ -10,9 +10,13 @@ module.exports = function (host, domain, target) {
     if(url.substr(url.length-1) === '/')
         url = url.slice(0, -1);
 
+    //remove leading slash
+    if(target.substr(url.length-1) === '/')
+        target = target.slice(0, -1);
+
     //make sure target has leading slash
-    if(target.substr(url.length-1) !== '/')
-        target += '/';
+    if(target.substr(0) !== '/')
+        target = '/' + target;
 
     url += target;
     
