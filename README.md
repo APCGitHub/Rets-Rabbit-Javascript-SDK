@@ -121,23 +121,23 @@ In order to perform queries against with the RR API, this module exposes
 a `get()` request method which accepts a request parameter.
 
 ```javascript
-   var rrClient = new RetsRabbit();
-   
-   RetsRabbit.ready(function () {
-        var q = {
-            '$top': 10, 
-            '$select': 'ListingId, ListPrice'
-        };
-        
-        //third param is for the access_token if you want directly
-        //pass it in, but it pulls from localStorage by default
-        rrClient.get('/v2/property', q, null, function (err, res){
-            if(err){
-                //handle error
-            } else {
-               var listings = res.value;
-               //do awesome stuff with listings
-            }
-        });
-   });
+var rrClient = new RetsRabbit();
+
+RetsRabbit.ready(function () {
+    var q = {
+        '$top': 10, 
+        '$select': 'ListingId, ListPrice'
+    };
+    
+    //third param is for the access_token if you want directly
+    //pass it in, but it pulls from localStorage by default
+    rrClient.get('/v2/property', q, null, function (err, res){
+        if(err){
+            //handle error
+        } else {
+           var listings = res.value;
+           //do awesome stuff with listings
+        }
+    });
+});
 ```
