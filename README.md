@@ -6,7 +6,7 @@ Vanilla javascript sdk for the Rets Rabbit (RR) API.
 # via npm
 $ npm install rets-rabbit-js
 
-# via bower -- not currently available
+# via bower
 $ bower install rets-rabbit-js
 ```
 
