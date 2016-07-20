@@ -86,7 +86,7 @@ request is pointed at.
 rrClient.get('/v1/rest-of-path', ...) //v1 query string
 ```
 
-To learn more about querying the v1 endpoint go check out our [v1 docs]
+To learn more about querying the v1 endpoint go check out our [v1 docs] .
 (https://retsrabbit.com/docs/v1)
 
 #### V2
@@ -96,9 +96,9 @@ rrClient.get('/v2/rest-of-path', ...) //v2 query string
 ```
 
 The latest version (v2) of RR is ODATA v4 compliant which means we offer
- support for query expressions similar to these
+ support for these types of query expressions:
  
- ```bash
+ ```javascript
  $filter=ListPrice gt 75000 and geo.distance(location, POINT(-127.89734578345 45.234534534)) lt 50
  
  $select=ListPrice, ListingId, OriginaListPrice
@@ -112,7 +112,7 @@ The latest version (v2) of RR is ODATA v4 compliant which means we offer
  
  See the RR v2 [docs](https://retsrabbit.com/docs/v2) for more details 
  on how to interact with our data. If reading through documentation isn't
- your kind of thing we have an [API explorer](https://explore.retsrabbit.com) 
+ your kind of thing we have an [API explorer](http://explore.retsrabbit.com) 
  which allows you to interactively play with v2 of the API in an intuitive 
  and fun way!
 
