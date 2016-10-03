@@ -1,6 +1,6 @@
 {
   "name": "rets-rabbit-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript SDK for the Rets Rabbit API",
   "main": "dist/rets_rabbit.umd.min.js",
   "scripts": {
