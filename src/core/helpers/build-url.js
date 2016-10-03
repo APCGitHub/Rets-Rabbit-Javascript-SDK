@@ -15,4 +15,6 @@ module.exports = function (host, domain, target) {
         target += '/';
 
     url += target;
+
+    return url;
 };
