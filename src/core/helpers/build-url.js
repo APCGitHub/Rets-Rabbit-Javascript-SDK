@@ -7,18 +7,12 @@ module.exports = function (host, domain, target) {
     url += domain;
 
     //remove trailing slash from domain
-    if(url.substr(url.length-1) === '/')
+    if (url.substr(url.length - 1) === '/')
         url = url.slice(0, -1);
 
-    //remove leading slash
-    if(target.substr(url.length-1) === '/')
-        target = target.slice(0, -1);
-
-    //make sure target has leading slash
-    if(target.substr(0) !== '/')
-        target = '/' + target;
+    //add forward slash to target
+    if(target.substr(target.length - 1) !== '/')
+        target += '/';
 
     url += target;
-    
-    return url;
 };
