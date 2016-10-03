@@ -1886,6 +1886,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    url += target;
 	
+	    if (url.substr(url.length - 1) === '/')
+	        url = url.slice(0, -1);
+	
 	    return url;
 	};
 

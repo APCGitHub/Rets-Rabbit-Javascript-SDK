@@ -16,5 +16,8 @@ module.exports = function (host, domain, target) {
 
     url += target;
 
+    if (url.substr(url.length - 1) === '/')
+        url = url.slice(0, -1);
+
     return url;
 };
